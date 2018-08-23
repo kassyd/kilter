@@ -1,6 +1,4 @@
-import Vue from 'vue'
-import Dialog from './components/dialog'
-Vue.component('k-dialog', Dialog)
+Vue.component('k-dialog', k_dialog)
 var app = new Vue({
   el: '#app',
   data: {

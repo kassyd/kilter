@@ -12,6 +12,7 @@
       background-color: red;
     }
   </style>
+  <link rel="stylesheet" href="./components/dialog.css">
 </head>
 <body style="margin: 0;">
   <div id="app">
@@ -22,12 +23,13 @@
       <li></li>
       <li></li>
     </ul>
-    <g-dialog :show="isShow" @close="close">
+    <k-dialog :show="isShow" @close="close">
       dhsaksa
-    </g-dialog>
+    </k-dialog>
     <button @click="open">打开</button>
   </div>
 </body>
-<script src="./node_modules/vue/dist/vue.common.js"></script>
+<script src="./node_modules/vue/dist/vue.js"></script>
+<script src="./components/dialog.js"></script>
 <script src="./index.js"></script>
 </html>
