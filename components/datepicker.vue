@@ -8,7 +8,10 @@
       </div>
       <div class="k-container">
         <div class="selectedArea"></div>
-        <ul class="year">
+        <ul class="year"
+          @touchstart="yearTouchstart"
+          @touchmove="yearTouchmove"
+          @touchend="yearTouchend">
           <li v-for="y in 12" :key="y">{{y}}</li>
         </ul>
         <ul class="month">
@@ -34,6 +37,15 @@ export default {
   methods: {
     close() {
       this.$emit('close')
+    },
+    yearTouchstart(e) {
+      console.log(e, 1)
+    },
+    yearTouchmove(e) {
+      console.log(e, 2)
+    },
+    yearTouchend(e) {
+      console.log(e, 3)
     }
   }
 }
