@@ -22,8 +22,10 @@
   "homepage": "https://github.com/kassyd/kilter#readme",
   "devDependencies": {
     "@vue/component-compiler-utils": "^2.2.0",
+    "better-scroll": "^1.12.6",
     "less": "^3.8.1",
     "node-sass": "^4.9.3",
+    "stylus": "^0.54.5",
     "vue": "^2.5.17",
     "vue-template-compiler": "^2.5.17"
   },
