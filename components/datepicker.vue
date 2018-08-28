@@ -8,24 +8,44 @@
       </div>
       <div class="k-container">
         <div class="selectedArea"></div>
-        <ul class="year"
-          @touchstart="yearTouchstart"
-          @touchmove="yearTouchmove"
-          @touchend="yearTouchend">
-          <li v-for="y in 12" :key="y">{{y}}</li>
-        </ul>
-        <ul class="month">
+        <div class="wrapper" ref="wrapper">
+          <ul class="year content">
+            <li></li>
+            <li></li>
+            <li></li>
+            <li v-for="y in 12" :key="y">{{y}}</li>
+            <li></li>
+            <li></li>
+            <li></li>
+          </ul>
+        </div>
+        
+        <!-- <ul class="month">
+          <li></li>
+          <li></li>
+          <li></li>
           <li v-for="m in 12" :key="m">{{m}}</li>
+          <li></li>
+          <li></li>
+          <li></li>
         </ul>
         <ul class="day">
+          <li></li>
+          <li></li>
+          <li></li>
           <li v-for="d in 31" :key="d">{{d}}</li>
-        </ul>
+          <li></li>
+          <li></li>
+          <li></li>
+        </ul> -->
       </div>
     </div>
   </div>
 </template>
 
 <script>
+import BScroll from 'better-scroll'
+
 export default {
   name: "kilter-datepicker",
   props: {
@@ -34,19 +54,22 @@ export default {
       default: false
     }
   },
+  data() {
+    return {
+      startPos: {},
+      isScrolling: 0,
+      endPos: {}
+    }
+  },
   methods: {
     close() {
       this.$emit('close')
-    },
-    yearTouchstart(e) {
-      console.log(e, 1)
-    },
-    yearTouchmove(e) {
-      console.log(e, 2)
-    },
-    yearTouchend(e) {
-      console.log(e, 3)
     }
+  },
+  mounted() {
+    this.$nextTick(() => {
+      this.scroll = new BScroll(this.$refs.wrapper, {})
+    })
   }
 }
 </script>
@@ -86,6 +109,7 @@ ul, li {
   .k-container {
     height: 255px;
     display: flex;
+    display: -webkit-flex;
     position: relative;
     .selectedArea {
       position: absolute;
@@ -96,15 +120,18 @@ ul, li {
       border-top: 1px solid #a8a8a8;
       box-shadow: inset 0px -1px 1px -1px #000;
     }
-    .year,.month,.day {
+    .wrapper {
       height: 100%;
-      overflow: hidden;
-      flex: 1;
-      > li {
+      flex-grow: 1;
+      overflow: scroll;
+      .year,.month,.day {
         width: 100%;
-        height: 37px;
-        line-height: 36px;
-        text-align: center;
+        > li {
+          width: 100%;
+          height: 36px;
+          line-height: 36px;
+          text-align: center;
+        }
       }
     }
   }
