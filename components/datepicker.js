@@ -44,7 +44,7 @@
               type: Boolean,
               default: true
           },
-          hasDate: {
+          hasDay: {
               type: Boolean,
               default: true
           },
@@ -253,10 +253,10 @@
                         : i === 1
                           ? _vm.hasMonth
                           : i === 2
-                            ? _vm.hasDate
+                            ? _vm.hasDay
                             : false,
                     expression:
-                      "i === 0 ? hasYear : (i === 1 ? hasMonth : (i === 2) ? hasDate : false)"
+                      "i === 0 ? hasYear : (i === 1 ? hasMonth : (i === 2) ? hasDay : false)"
                   }
                 ],
                 key: i,

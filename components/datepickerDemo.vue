@@ -7,7 +7,7 @@
                 <div class="sure" @click="sureClick">{{sureBtnText}}</div>
             </div>
             <div class="picker-contain">
-                <div v-for="(k,i) in dateData" :key="i" v-show="i === 0 ? hasYear : (i === 1 ? hasMonth : (i === 2) ? hasDate : false)" class="wheel-cont wheel-scroll" ref="picker">
+                <div v-for="(k,i) in dateData" :key="i" v-show="i === 0 ? hasYear : (i === 1 ? hasMonth : (i === 2) ? hasDay : false)" class="wheel-cont wheel-scroll" ref="picker">
                     <ul class="wheel-item items">
                         <li v-for="(key,index) in k" :key="index" class="item">{{key}}</li>
                     </ul>
@@ -63,7 +63,7 @@ export default {
             type: Boolean,
             default: true
         },
-        hasDate: {
+        hasDay: {
             type: Boolean,
             default: true
         },
