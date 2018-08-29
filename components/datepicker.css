@@ -1,0 +1,106 @@
+
+ul[data-v-a8c3ae], li[data-v-a8c3ae] {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+.picker[data-v-a8c3ae] {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+.bg[data-v-a8c3ae] {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  background-color: rgba(0, 0, 0, 0.6);
+}
+.piciker-cont[data-v-a8c3ae] {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  background-color: #fff;
+}
+.piciker-cont .btns[data-v-a8c3ae] {
+    position: relative;
+    width: 100%;
+    height: 40px;
+    border-bottom: 1px solid #ddd;
+    background-color: #fff;
+}
+.piciker-cont .btns div[data-v-a8c3ae] {
+      position: absolute;
+      top: 0;
+      width: 60px;
+      font-size: 16px;
+      text-align: center;
+      line-height: 40px;
+      cursor: pointer;
+}
+.piciker-cont .btns div.sure[data-v-a8c3ae] {
+        right: 0;
+        color: cornflowerblue;
+}
+.piciker-cont .btns div.cancel[data-v-a8c3ae] {
+        left: 0;
+        color: #a0a0a0;
+}
+.wheel-cont[data-v-a8c3ae] {
+  position: relative;
+  width: 100%;
+  height: 150px;
+  overflow: hidden;
+  padding-top: 60px;
+  background-color: #fff;
+}
+.wheel-cont[data-v-a8c3ae]:before {
+    top: 0;
+    z-index: 1;
+    position: absolute;
+    left: 50%;
+    width: 60%;
+    height: 42%;
+    transform: translateX(-50%);
+    -webkit-transform: translateX(-50%);
+    content: '';
+    border-bottom: 1px solid #a8a8a8;
+    background: -webkit-gradient(linear, 0 0, 0 100%, from(white), to(rgba(255, 255, 255, 0.3)));
+    background: -moz-gradient(linear, 0 0, 0 100%, from(white), to(rgba(255, 255, 255, 0.3)));
+    background: gradient(linear, 0 0, 0 100%, from(white), to(rgba(255, 255, 255, 0.3)));
+}
+.wheel-cont[data-v-a8c3ae]:after {
+    bottom: 0;
+    z-index: 1;
+    position: absolute;
+    left: 50%;
+    width: 60%;
+    height: 42%;
+    transform: translateX(-50%);
+    -webkit-transform: translateX(-50%);
+    content: '';
+    border-top: 1px solid #a8a8a8;
+    background: -webkit-gradient(linear, 0 0, 0 100%, from(rgba(255, 255, 255, 0.3)), to(white));
+    background: -moz-gradient(linear, 0 0, 0 100%, from(rgba(255, 255, 255, 0.3)), to(white));
+    background: gradient(linear, 0 0, 0 100%, from(rgba(255, 255, 255, 0.3)), to(white));
+}
+.wheel-cont .item[data-v-a8c3ae] {
+    width: 100%;
+    height: 30px;
+    text-align: center;
+    line-height: 30px;
+}
+.picker-contain[data-v-a8c3ae] {
+  display: flex;
+  display: -webkit-flex;
+}
+.picker-contain > div[data-v-a8c3ae] {
+    flex-grow: 1;
+}
+.picker-contain > div .wheel-item[data-v-a8c3ae] {
+      margin-top: 30px;
+}
