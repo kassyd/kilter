@@ -32,11 +32,11 @@ export default {
     props: {
         sureBtnText: {
             type: String,
-            default: 'sure'
+            default: '确认'
         },
         cancelBtnText: {
             type: String,
-            default: 'cancel'
+            default: '取消'
         },
         defaultDate: {
             type: String,
@@ -169,13 +169,13 @@ export default {
             for (let m = 0; m < this.hierarchy.length; m++) {
                 texts.push(this.dateData[m][this.hierarchy[m]]);
             }
-            if (!!!texts[texts.length]) {
+            if (!!!texts[texts.length - 1]) {
                 texts[texts.length -1] = this.dateData[this.dateData.length -1][this.dateData[this.dateData.length -1].length -1]
             }
             this.$emit('sure-click', this.hierarchy, texts);
         },
         cancelClick() {
-            this.$emit('cancelClick');
+            this.$emit('cancel-click');
         },
         updateData (pos, m) {
             const ss = this.startDate.split('/');
@@ -232,7 +232,7 @@ ul, li {
   position: absolute;
   left: 50%;
   width: 60%;
-  height: 40%;
+  height: 42%;
   transform: translateX(-50%);
   -webkit-transform: translateX(-50%);
   content: '';
@@ -258,36 +258,6 @@ ul, li {
   left: 0;
   width: 100%;
   background-color: #fff;
-}
-.wheel-cont {
-  position: relative;
-  width: 100%;
-  height: 150px;
-  overflow: hidden;
-  padding-top: 60px;
-  background-color: #fff;
-  &:before {
-    top: 0;
-    @include cssStyle;
-    border-bottom: 1px solid #ddd;
-    background: -webkit-gradient(linear,0 0,0 100%,from(rgba(255, 255, 255, 1)),to(rgba(255, 255, 255, 0.3)));
-    background: -moz-gradient(linear,0 0,0 100%,from(rgba(255, 255, 255, 1)),to(rgba(255, 255, 255, 0.3)));
-    background: gradient(linear,0 0,0 100%,from(rgba(255, 255, 255, 1)),to(rgba(255, 255, 255, 0.3)));
-  }
-  &:after {
-    bottom: 0;
-    @include cssStyle;
-    border-top: 1px solid #ddd;
-    background: -webkit-gradient(linear,0 0,0 100%,from(rgba(255, 255, 255, 0.3)),to(rgba(255, 255, 255, 1)));
-    background: -moz-gradient(linear,0 0,0 100%,from(rgba(255, 255, 255, 0.3)),to(rgba(255, 255, 255, 1)));
-    background: gradient(linear,0 0,0 100%,from(rgba(255, 255, 255, 0.3)),to(rgba(255, 255, 255, 1)));
-  }
-  .item {
-    width: 100%;
-    height: 30px;
-    text-align: center;
-    line-height: 30px;
-  }
   .btns {
     position: relative;
     width: 100%;
@@ -302,15 +272,45 @@ ul, li {
       text-align: center;
       line-height: 40px;
       cursor: pointer;
+      &.sure {
+        right: 0;
+        color: cornflowerblue;
+      }
+      &.cancel {
+        left: 0;
+        color: #a0a0a0;
+      }
     }
-    &.sure {
-      right: 0;
-      color: cornflowerblue;
-    }
-    &.cancel {
-      left: 0;
-      color: #a0a0a0;
-    }      
+  }
+}
+.wheel-cont {
+  position: relative;
+  width: 100%;
+  height: 150px;
+  overflow: hidden;
+  padding-top: 60px;
+  background-color: #fff;
+  &:before {
+    top: 0;
+    @include cssStyle;
+    border-bottom: 1px solid #a8a8a8;
+    background: -webkit-gradient(linear,0 0,0 100%,from(rgba(255, 255, 255, 1)),to(rgba(255, 255, 255, 0.3)));
+    background: -moz-gradient(linear,0 0,0 100%,from(rgba(255, 255, 255, 1)),to(rgba(255, 255, 255, 0.3)));
+    background: gradient(linear,0 0,0 100%,from(rgba(255, 255, 255, 1)),to(rgba(255, 255, 255, 0.3)));
+  }
+  &:after {
+    bottom: 0;
+    @include cssStyle;
+    border-top: 1px solid #a8a8a8;
+    background: -webkit-gradient(linear,0 0,0 100%,from(rgba(255, 255, 255, 0.3)),to(rgba(255, 255, 255, 1)));
+    background: -moz-gradient(linear,0 0,0 100%,from(rgba(255, 255, 255, 0.3)),to(rgba(255, 255, 255, 1)));
+    background: gradient(linear,0 0,0 100%,from(rgba(255, 255, 255, 0.3)),to(rgba(255, 255, 255, 1)));
+  }
+  .item {
+    width: 100%;
+    height: 30px;
+    text-align: center;
+    line-height: 30px;
   }
 }
 
