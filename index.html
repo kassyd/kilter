@@ -13,6 +13,7 @@
     }
   </style>
   <link rel="stylesheet" href="./components/dialog.css">
+  <link rel="stylesheet" href="./components/datepicker.css">
 </head>
 <body style="margin: 0;">
   <div id="app">
@@ -24,15 +25,16 @@
       <li></li>
     </ul>
     <!-- <k-dialog :show="isShow" @close="close">
-      dhsaksa
     </k-dialog> -->
     <!-- <demo></demo> -->
     <!-- <k-datepicker :show="isShow" @close="close"></k-datepicker> -->
-    <k-datepicker @sure-click="haha"></k-datepicker>
+    <k-datepicker v-if="datepickerShow" @sure-click="sureClick" @cancel-click="datepickerShow = false"></k-datepicker>
     <button @click="open">打开</button>
   </div>
 </body>
-<!-- <script src="./node_modules/vue/dist/vue.js"></script> -->
-<!-- <script src="./components/dialog.js"></script> -->
+<script src="./node_modules/vue/dist/vue.js"></script>
+<script src="./components/better-scroll.js"></script>
+<script src="./components/dialog.js"></script>
+<script src="./components/datepicker.js"></script>
 <script src="./index.js"></script>
 </html>
