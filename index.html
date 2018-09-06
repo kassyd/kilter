@@ -28,13 +28,16 @@
     </k-dialog> -->
     <!-- <demo></demo> -->
     <!-- <k-datepicker :show="isShow" @close="close"></k-datepicker> -->
-    <k-datepicker v-if="datepickerShow" @sure-click="sureClick" @cancel-click="datepickerShow = false"></k-datepicker>
+    <!-- <k-datepicker v-if="datepickerShow" @sure-click="sureClick" @cancel-click="datepickerShow = false"></k-datepicker> -->
+    <div style="padding: 20px;">
+      <k-select></k-select>
+    </div>
     <button @click="open">打开</button>
   </div>
 </body>
 <script src="./node_modules/vue/dist/vue.js"></script>
-<script src="./components/better-scroll.js"></script>
+<!-- <script src="./components/better-scroll.js"></script>
 <script src="./components/dialog.js"></script>
-<script src="./components/datepicker.js"></script>
+<script src="./components/datepicker.js"></script> -->
 <script src="./index.js"></script>
 </html>
