@@ -54,6 +54,8 @@ datepicker组件的使用方法:
           点击确定按钮触发方法   参数(hierarchy, texts)
         cancel-click
           点击取消按钮触发方法
+
+### selector
         
 
           

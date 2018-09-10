@@ -1,16 +1,31 @@
 import Vue from 'vue'
-import k_select from './components/select.vue'
+import k_selector from './components/selector.vue'
 // import k_datepicker from './components/datepicker.vue'
 // import k_datepicker from './components/datepickerDemo.vue'
 // import demo from './components/demo.vue'
 // Vue.component('k-dialog', k_dialog)
 // Vue.component('k-datepicker', k_datepicker)
-Vue.component('k-select', k_select)
+Vue.component('k-selector', k_selector)
 var app = new Vue({
   el: '#app',
   data: {
-    isShow: true,
-    datepickerShow: false
+    isShow: false,
+    datepickerShow: false,
+    haha: "",
+    options: [
+      {
+        label: '北京1',
+        value: '1'
+      },
+      {
+        label: '北京2',
+        value: '2'
+      },
+      {
+        label: '北京3',
+        value: '3'
+      }
+    ]
   },
   methods: {
     close() {
@@ -25,6 +40,9 @@ var app = new Vue({
       console.log(1)
       console.log(hierarchy, texts)
       this.datepickerShow = false
+    },
+    change() {
+      console.log(this.haha)
     }
   }
 })
