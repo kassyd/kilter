@@ -74,9 +74,11 @@ ul, li {
   display: inline-block;
   width: 160px;
   height: 25px;
+  padding: 0;
   font-size: 12px;
   .k-select {
     position: relative;
+    padding: 0;
     .input-inner {
       position: absolute;
       display: inline-block;
@@ -86,7 +88,7 @@ ul, li {
       border: 1px solid #d8d8d8;
       cursor: pointer;
       outline: none;
-      padding-left: 8px;
+      padding: 0 28px 0 8px;
       box-sizing: border-box;
     }
     .icon {
@@ -108,6 +110,7 @@ ul, li {
     background-color: #fff;
     box-sizing: border-box;
     border: 1px solid #eee;
+    z-index: 1000;
     box-shadow: 0 2px 12px 0 rgba(0,0,0,.1);
     .option {
       padding: 5px 10px;
