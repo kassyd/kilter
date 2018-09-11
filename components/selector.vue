@@ -102,6 +102,8 @@ ul, li {
   .options {
     position: absolute;
     width: 160px;
+    max-height: 250px;
+    overflow: scroll;
     top: 28px;
     background-color: #fff;
     box-sizing: border-box;
