@@ -56,6 +56,18 @@ datepicker组件的使用方法:
           点击取消按钮触发方法
 
 ### selector
+selector组件的使用方法:
+
+可传参数:
+
+        options: 
+          Array类型  数组中每个对象为一个option,每个对象包含渲染值label与真实值value
+
+可用方法:
+
+        change:
+          当点击option触发绑定值更新时事件触发方法  参数(value, index, label)
+
         
 
           
