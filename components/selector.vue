@@ -22,15 +22,16 @@ export default {
       type: String,
       default: ''
     },
-    isOpen: {
-      type: Boolean,
-      default: false
-    },
     options: {
       type: Array,
       default: function() {
         return []
       }
+    }
+  },
+  data() {
+    return {
+      isOpen: false
     }
   },
   computed: {
@@ -42,11 +43,11 @@ export default {
   methods: {
     selectClick(e) {
       e.target.parentElement.children[0].focus()
-      this.$emit('update:isOpen', !this.isOpen)
+      this.isOpen = !this.isOpen
     },
     selectOption(i, event) {
       let timer = setTimeout(() => {
-        this.$emit('update:isOpen', false)
+        this.isOpen = false
         this.$emit('select', this.options[i].value)
         this.$emit('change', this.options[i].value, i, this.options[i].label)
         clearTimeout(timer)
@@ -54,7 +55,7 @@ export default {
     },
     selectNone() {
       let timer = setTimeout(() => {
-        this.$emit('update:isOpen', false)
+        this.isOpen = false
         clearTimeout(timer)
       },150)
     }

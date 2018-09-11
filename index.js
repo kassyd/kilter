@@ -11,7 +11,8 @@ var app = new Vue({
   data: {
     isShow: false,
     datepickerShow: false,
-    haha: "",
+    haha1: "",
+    haha2: "",
     options: [
       {
         label: '北京1',
@@ -41,8 +42,11 @@ var app = new Vue({
       console.log(hierarchy, texts)
       this.datepickerShow = false
     },
-    change() {
-      console.log(this.haha)
+    change1(val) {
+      console.log(this.haha1, val)
+    },
+    change2(val) {
+      console.log(this.haha2, val)
     }
   }
 })

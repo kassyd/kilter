@@ -30,7 +30,8 @@
     <!-- <k-datepicker :show="isShow" @close="close"></k-datepicker> -->
     <!-- <k-datepicker v-if="datepickerShow" @sure-click="sureClick" @cancel-click="datepickerShow = false"></k-datepicker> -->
     <div style="padding: 20px;">
-      <k-selector :is-open.sync="isShow" v-model="haha" :options="options" @change="change"></k-selector>
+      <k-selector v-model="haha1" :options="options" @change="change1"></k-selector>
+      <k-selector v-model="haha2" :options="options" @change="change2"></k-selector>
     </div>
     <button @click="open">打开</button>
   </div>
